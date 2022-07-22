@@ -3,6 +3,7 @@ package main
 import "sort"
 
 func merge(intervals [][]int) [][]int {
+
 	//先按区间左端点排序
 	sort.Slice(intervals, func(i, j int) bool {
 		if intervals[i][0] == intervals[j][0] {
@@ -29,6 +30,7 @@ func merge(intervals [][]int) [][]int {
 }
 
 func merge3(intervals [][]int) [][]int {
+
 	if len(intervals) == 1 {
 		return intervals
 	}

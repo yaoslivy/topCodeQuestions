@@ -46,6 +46,7 @@ func min(x, y int) int {
 }
 
 func largestSumAfterKNegations2(nums []int, k int) int {
+
 	// 局部最优：让绝对值大的负数变成正数，当k依然大于0时，再将绝对值小的数取反
 	// 全局最优：整个数组和达到最大
 	//先将整个序列按照绝对值从大到小排序，

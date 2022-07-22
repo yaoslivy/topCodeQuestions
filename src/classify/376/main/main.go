@@ -20,6 +20,7 @@ func wiggleMaxLength2(nums []int) int {
 	return res
 }
 
+
 func wiggleMaxLength(nums []int) int {
 	if len(nums) <= 1 {
 		return len(nums)
@@ -28,6 +29,7 @@ func wiggleMaxLength(nums []int) int {
 	// 这个坡度就可以有两个局部峰值
 	// 整体最优：整个序列有最多的局部峰值，从而达到最长摆动序列
 	curDiff, preDiff := 0, 0 //前一段单调序列上的差值， 后一段单调序列上的差值
+
 	res := 1
 	// 2 5
 	for i := 0; i < len(nums)-1; i++ {

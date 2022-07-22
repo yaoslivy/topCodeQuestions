@@ -1,9 +1,11 @@
 package main
 
+
 import (
 	"fmt"
 	"math"
 )
+
 
 func main() {
 	arr := []int{5, 4, -1, 7, 8}
@@ -39,7 +41,9 @@ func merge(leftSeq, rightSeq Status) Status {
 	return Status{totalSum: totalSum, leftSum: leftSum, rightSum: rightSum, maxSum: maxSum}
 }
 
+
 // 动态规划
+
 func maxSubArray(nums []int) int {
 	dp := make([]int, len(nums)+1) // 每一个位置记录以i为结尾序列的最大和的连续子数组
 	res := nums[0]
@@ -58,6 +62,7 @@ func maxSubArray(nums []int) int {
 }
 
 //动态规划 滚动数组
+
 func maxSubArray2(nums []int) int {
 	res := nums[0]
 	for i := 1; i < len(nums); i++ {
@@ -98,3 +103,4 @@ func max(x, y int) int {
 	}
 	return y
 }
+

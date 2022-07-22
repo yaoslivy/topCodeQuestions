@@ -15,6 +15,7 @@ func canJump2(nums []int) bool {
 	return false
 }
 
+
 func canJump(nums []int) bool {
 	// 局部最优：每次取最大跳跃步数，取最大覆盖范围
 	// 全局最优：最后得到整体最大覆盖范围

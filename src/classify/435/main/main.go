@@ -2,6 +2,7 @@ package main
 
 import "sort"
 
+
 func eraseOverlapIntervals2(intervals [][]int) int {
 	// 按区间右端点排序，尽可能保留右端点小的区间，留下右边更大范围给下一个区间
 	sort.Slice(intervals, func(i, j int) bool {
@@ -21,6 +22,7 @@ func eraseOverlapIntervals2(intervals [][]int) int {
 	}
 	return res
 }
+
 
 func eraseOverlapIntervals(intervals [][]int) int {
 	//先按从小到大排序， 右边界越小，留给下一个区间的空间就越大，从左向右遍历，可以优先选右边界小的
