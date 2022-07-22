@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 func main() {
 	arr := []int{5, 4, -1, 7, 8}
@@ -36,13 +39,7 @@ func merge(leftSeq, rightSeq Status) Status {
 	return Status{totalSum: totalSum, leftSum: leftSum, rightSum: rightSum, maxSum: maxSum}
 }
 
-func max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
-}
-
+// 动态规划
 func maxSubArray(nums []int) int {
 	dp := make([]int, len(nums)+1) // 每一个位置记录以i为结尾序列的最大和的连续子数组
 	res := nums[0]
@@ -60,6 +57,7 @@ func maxSubArray(nums []int) int {
 	return res
 }
 
+//动态规划 滚动数组
 func maxSubArray2(nums []int) int {
 	res := nums[0]
 	for i := 1; i < len(nums); i++ {
@@ -71,4 +69,32 @@ func maxSubArray2(nums []int) int {
 		}
 	}
 	return res
+}
+
+//贪心解法
+func maxSubArray4(nums []int) int {
+	if len(nums) == 0 {
+		return 0
+	}
+	if len(nums) == 1 {
+		return nums[0]
+	}
+	//贪心策略：只要加上当前值可以使得sum为正数就加，否则sum为0重新开始求sum，不断更新res
+	res := math.MinInt
+	sum := 0
+	for i := 0; i < len(nums); i++ {
+		sum += nums[i]
+		res = max(res, sum)
+		if sum <= 0 {
+			sum = 0
+		}
+	}
+	return res
+}
+
+func max(x, y int) int {
+	if x > y {
+		return x
+	}
+	return y
 }

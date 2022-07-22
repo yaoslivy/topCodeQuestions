@@ -29,7 +29,8 @@ func max(x, y int) int {
 }
 
 func maxProfit2(prices []int, fee int) int {
-	// 每次在最低点买入，在最高点卖出的差值diff -fee就是一段买卖的最大利率, diff-fee > 0才收集利润
+	// 每次在最低点买入，在最高点卖出的差值diff -fee就是一段买卖的最大利率,
+	// diff-fee > 0才收集利润
 	minPrice := prices[0]
 	res := 0
 	for i := 1; i < len(prices); i++ {
@@ -40,6 +41,8 @@ func maxProfit2(prices []int, fee int) int {
 		// 可以收集利润的情况
 		if prices[i]-minPrice-fee > 0 {
 			res += prices[i] - minPrice - fee
+			//更新当前的最低点，minVal到i+1是一段上升序列，收集了利润
+			//如果还有下一点还可以收集利润，则不能减去fee
 			minPrice = prices[i] - fee //只有当最低价格变化时，才减去fee
 		}
 
