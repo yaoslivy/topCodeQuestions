@@ -3,6 +3,34 @@ package main
 import "sort"
 
 func merge(intervals [][]int) [][]int {
+
+	//先按区间左端点排序
+	sort.Slice(intervals, func(i, j int) bool {
+		if intervals[i][0] == intervals[j][0] {
+			return intervals[i][1] < intervals[j][1]
+		}
+		return intervals[i][0] < intervals[j][0]
+	})
+	//记录当前覆盖区间的左右端点
+	left := intervals[0][0]
+	right := intervals[0][1]
+	res := make([][]int, 0)
+	for i := 1; i < len(intervals); i++ {
+		if right < intervals[i][0] { //当前区间无法覆盖后一区间
+			res = append(res, []int{left, right})
+			left = intervals[i][0]
+			right = intervals[i][1]
+		} else {
+			right = max(right, intervals[i][1])
+		}
+	}
+	//最后一段覆盖的区间加入
+	res = append(res, []int{left, right})
+	return res
+}
+
+func merge3(intervals [][]int) [][]int {
+
 	if len(intervals) == 1 {
 		return intervals
 	}
