@@ -18,16 +18,17 @@ func insertIntoBSTTraverse(root *TreeNode, val int) *TreeNode {
 		return &TreeNode{Val: val}
 	}
 	cur := root
-	var pre *TreeNode
+	var pre *TreeNode //记录cur的父节点
+	//找到合适的空位置插入
 	for cur != nil {
 		pre = cur
-		if cur.Val > val {
+		if cur.Val >= val {
 			cur = cur.Left
-		} else if cur.Val < val {
+		} else {
 			cur = cur.Right
 		}
 	}
-	if pre.Val > val {
+	if pre.Val >= val { //插入左边
 		pre.Left = &TreeNode{Val: val}
 	} else {
 		pre.Right = &TreeNode{Val: val}
@@ -35,15 +36,16 @@ func insertIntoBSTTraverse(root *TreeNode, val int) *TreeNode {
 	return root
 }
 
-//递归方式
+//递归
 func insertIntoBSTRecursion(root *TreeNode, val int) *TreeNode {
+	//递归找到一个空位置插入
 	if root == nil {
 		return &TreeNode{Val: val}
 	}
-	if root.Val > val { //在当前节点的左边
+
+	if root.Val >= val { //插入左边
 		root.Left = insertIntoBSTRecursion(root.Left, val)
-	}
-	if root.Val < val { //在当前节点的右边
+	} else {
 		root.Right = insertIntoBSTRecursion(root.Right, val)
 	}
 	return root

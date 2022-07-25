@@ -8,10 +8,32 @@ type TreeNode struct {
 
 func hasPathSum(root *TreeNode, targetSum int) bool {
 	// return hasPathSumPostTraverse(root, targetSum)
-	if root == nil {
+
+	/* if root == nil {
 		return false
 	}
-	return hasPathSumTraverse(root, targetSum-root.Val)
+	return hasPathSumTraverse(root, targetSum-root.Val) */
+
+	res = false
+	hasPathSumRecursion(root, targetSum, 0)
+	return res
+}
+
+//递归解法
+var res bool
+
+func hasPathSumRecursion(root *TreeNode, targetSum int, curSum int) {
+	if root == nil {
+		return
+	}
+	if root.Left == nil && root.Right == nil { //找到叶子节点
+		if curSum+root.Val == targetSum {
+			res = true
+		}
+		return
+	}
+	hasPathSumRecursion(root.Left, targetSum, curSum+root.Val)
+	hasPathSumRecursion(root.Right, targetSum, curSum+root.Val)
 }
 
 //递归求解

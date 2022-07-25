@@ -154,4 +154,14 @@ LeetCode题目的解法
 |669. 修剪二叉搜索树|[view](https://leetcode.cn/problems/trim-a-binary-search-tree/)|
 |108. 将有序数组转换为二叉搜索树|[view](https://leetcode.cn/problems/convert-sorted-array-to-binary-search-tree/)|
 
+### 链表问题
+| title | link                                                                          |
+|------|-------------------------------------------------------------------------------|
+|203. 移除链表元素|[view](https://leetcode.cn/problems/remove-linked-list-elements/)|
+|707. 设计链表|[view](https://leetcode.cn/problems/design-linked-list/)|
+|206. 反转链表|[view](https://leetcode.cn/problems/reverse-linked-list/)|
+|24. 两两交换链表中的节点|[view](https://leetcode.cn/problems/swap-nodes-in-pairs/)|
+|19. 删除链表的倒数第 N 个结点|[view](https://leetcode.cn/problems/remove-nth-node-from-end-of-list/)|
+|面试题 02.07. 链表相交|[view](https://leetcode.cn/problems/intersection-of-two-linked-lists-lcci/)|
+|142. 环形链表 II|[view](https://leetcode.cn/problems/linked-list-cycle-ii/)|
 

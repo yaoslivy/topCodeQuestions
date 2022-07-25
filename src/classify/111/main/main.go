@@ -1,5 +1,7 @@
 package main
 
+import "math"
+
 type TreeNode struct {
 	Val   int
 	Left  *TreeNode
@@ -8,7 +10,29 @@ type TreeNode struct {
 
 func minDepth(root *TreeNode) int {
 	// return minDepthPostOrder(root)
-	return minDepthLevelTraverse(root)
+	//return minDepthLevelTraverse(root)
+
+	minH = math.MaxInt
+	minDepthRecursion(root, 1)
+	if minH == math.MaxInt {
+		return 0
+	}
+	return minH
+}
+
+//递归解法
+var minH int //保存最小高度
+func minDepthRecursion(root *TreeNode, curH int) {
+	if root == nil {
+		return
+	}
+	if root.Left == nil && root.Right == nil {
+		if minH > curH { //到叶子节点且高度最小
+			minH = curH
+		}
+	}
+	minDepthRecursion(root.Left, curH+1)
+	minDepthRecursion(root.Right, curH+1)
 }
 
 //迭代解法

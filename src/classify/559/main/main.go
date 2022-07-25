@@ -8,6 +8,26 @@ type Node struct {
 func maxDepth(root *Node) int {
 	// return maxDepthByLevelTraverse(root)
 	return maxDepthByPostOrder(root)
+
+	// maxH = 0
+	// maxDepthRecursion(root, 1)
+	// return maxH
+}
+
+// 递归方式
+var maxH int
+
+func maxDepthRecursion(root *Node, curH int) {
+	if root == nil {
+		return
+	}
+
+	for i := 0; i < len(root.Children); i++ {
+		maxDepthRecursion(root.Children[i], curH+1)
+	}
+	if maxH < curH {
+		maxH = curH
+	}
 }
 
 //通过递归方式

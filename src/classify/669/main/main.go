@@ -7,37 +7,38 @@ type TreeNode struct {
 }
 
 func trimBST(root *TreeNode, low int, high int) *TreeNode {
-	// return trimBSTTraverse2(root, low, high)
-
 	// return trimBSTRecursion(root, low, high)
-	return trimBSTTraverse(root, low, high)
+
+	return trimBSTRecursionTraverse(root, low, high)
 }
 
 //迭代方式
-func trimBSTTraverse(root *TreeNode, low, high int) *TreeNode {
+func trimBSTRecursionTraverse(root *TreeNode, low, high int) *TreeNode {
 	if root == nil {
 		return nil
 	}
-	// 先处理root
+	//找到在区间范围内的根节点
 	for root != nil && (root.Val < low || root.Val > high) {
-		if root.Val < low { //当前根节点和左子树的都不符合条件
+		if root.Val < low { //则当前根节点和左子树上的元素都不符合条件
 			root = root.Right
-		} else { //当前根节点和右子树都不符合条件
+		} else {
 			root = root.Left
 		}
 	}
-	//根节点在区间中，则左子树所有节点一定小于high，右子树所有节点一定大于low，判断左右子树符合条件的值
+	//根节点在区间范围内，则保证了左子树的所有元素都<high，保证了右子树的所有元素都>low
+	//去除左子树中<low的节点
 	cur := root
 	for cur != nil {
-		//处理左子树中小于low的节点
+		//找到满足的左子树根节点，不满足则跳到右边，因为左边比根节点的值还小
 		for cur.Left != nil && cur.Left.Val < low {
 			cur.Left = cur.Left.Right
 		}
-		cur = cur.Left
+		cur = cur.Left //下一个满足的左子树根节点
 	}
+	//去除右子树中>high的节点
 	cur = root
 	for cur != nil {
-		//处理右子树中大于high的节点
+		//找到满足的右子树的根节点，不满足则跳到左边，因为右边比根节点的值还大
 		for cur.Right != nil && cur.Right.Val > high {
 			cur.Right = cur.Right.Left
 		}
@@ -51,52 +52,16 @@ func trimBSTRecursion(root *TreeNode, low, high int) *TreeNode {
 	if root == nil {
 		return nil
 	}
-	if root.Val < low { //当前节点的值小于可取值区间，则当前节点和左子树上节点都不符合
-		right := trimBSTRecursion(root.Right, low, high)
-		return right
+	//二叉搜索树特点是中序遍历序列是从小到大的
+	if root.Val < low {
+		//如果当前根节点的值小于low，则当前根节点和左子树元素都不符合条件，返回符合的右子树
+		return trimBSTRecursion(root.Right, low, high)
 	}
-	if root.Val > high { //当前节点的值大于可取值区间，则当前节点和右子树上节点都不符合
-		left := trimBSTRecursion(root.Left, low, high)
-		return left
+	if root.Val > high {
+		//如果当前根节点值大于high，则当前根节点和右子树元素都不符合条件，返回符合的左子树
+		return trimBSTRecursion(root.Left, low, high)
 	}
 	root.Left = trimBSTRecursion(root.Left, low, high)
 	root.Right = trimBSTRecursion(root.Right, low, high)
 	return root
-}
-
-//迭代方式 全部遍历
-func trimBSTTraverse2(root *TreeNode, low, high int) *TreeNode {
-	if root == nil {
-		return nil
-	}
-	//直接遍历所有节点，判断是否需要删除
-	if root.Val < low || root.Val > high { //当前根需要删除
-		root = deleteRootNode(root)
-		root = trimBSTTraverse(root, low, high)
-	}
-	if root != nil {
-		root.Left = trimBSTTraverse(root.Left, low, high)
-		root.Right = trimBSTTraverse(root.Right, low, high)
-	}
-	return root
-}
-
-//删除二叉搜索树的根节点，并返回重组后的二叉搜索树
-//策略：在根节点右子树不为nil时，将当前根的左子树作为当前根右子树最左边节点的左孩子
-func deleteRootNode(root *TreeNode) *TreeNode {
-	if root == nil {
-		return nil
-	}
-	if root.Right == nil {
-		return root.Left
-	}
-	if root.Left == nil {
-		return root.Right
-	}
-	cur := root.Right //找到根节点的右子树中最左边的节点
-	for cur.Left != nil {
-		cur = cur.Left
-	}
-	cur.Left = root.Left
-	return root.Right
 }

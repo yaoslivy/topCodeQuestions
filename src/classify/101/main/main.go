@@ -11,40 +11,39 @@ func isSymmetric(root *TreeNode) bool {
 	//     return true
 	// }
 	// return isSymmetricTree(root.Left, root.Right)
-	return isSymmetricLevelTaverse(root)
+	return isSymmetricTraverse(root)
 }
 
-//迭代判断是否对称
-func isSymmetricLevelTaverse(root *TreeNode) bool {
+//迭代解法
+func isSymmetricTraverse(root *TreeNode) bool {
 	if root == nil {
 		return true
 	}
 	Q := make([]*TreeNode, 0)
 	cur := root
-	//一次性入队两个，出队时也一次性出两个
-	Q = append(Q, cur.Left)
+	Q = append(Q, cur.Left) //一次入队两个，一次出对两个来比较
 	Q = append(Q, cur.Right)
 	for len(Q) != 0 {
-		if len(Q) < 2 {
-			return false
+		size := len(Q)
+		for i := 0; i < size; i++ {
+			left := Q[0]
+			right := Q[1]
+			Q = Q[2:]
+			if left == nil && right == nil { //满足情况
+				break
+			}
+			if left == nil || right == nil {
+				return false
+			}
+			if left.Val != right.Val {
+				return false
+			}
+			//将当前两节点的的左右子树按照比较顺序入队
+			Q = append(Q, left.Left)
+			Q = append(Q, right.Right)
+			Q = append(Q, left.Right)
+			Q = append(Q, right.Left)
 		}
-		leftNode := Q[0]
-		rightNode := Q[1]
-		Q = Q[2:]
-		if leftNode == nil && rightNode == nil {
-			continue
-		}
-		if leftNode == nil || rightNode == nil {
-			return false
-		}
-		if leftNode.Val != rightNode.Val {
-			return false
-		}
-		//入队左右子节点
-		Q = append(Q, leftNode.Left)
-		Q = append(Q, rightNode.Right)
-		Q = append(Q, leftNode.Right)
-		Q = append(Q, rightNode.Left)
 	}
 	return true
 }

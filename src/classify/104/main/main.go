@@ -8,7 +8,27 @@ type TreeNode struct {
 
 func maxDepth(root *TreeNode) int {
 	// return maxDepthByLevelTraverse(root)
-	return maxDepthByPostOrder(root)
+	//return maxDepthByPostOrder(root)
+
+	maxH = 0
+	maxDepthRecursion(root, 1)
+	return maxH
+}
+
+//递归解法
+var maxH int
+
+func maxDepthRecursion(root *TreeNode, curH int) {
+	if root == nil {
+		return
+	}
+	if root.Left == nil && root.Right == nil { //到达叶子节点
+		if maxH < curH {
+			maxH = curH
+		}
+	}
+	maxDepthRecursion(root.Left, curH+1)
+	maxDepthRecursion(root.Right, curH+1)
 }
 
 func maxDepthByPostOrder(root *TreeNode) int {
