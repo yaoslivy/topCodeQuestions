@@ -8,14 +8,14 @@ type ListNode struct {
 func reverseList(head *ListNode) *ListNode {
 	// return reverseListTraverse(head)
 
-	return reverseListRecursion(nil, head)
+	return reverseListRecursion2(nil, head)
 
 	// return reverseListRecursion2(head)
 }
 
 //递归方式
 // pre->cur
-func reverseListRecursion(pre, cur *ListNode) *ListNode {
+func reverseListRecursion2(pre, cur *ListNode) *ListNode {
 	//1->2->3
 	// <-1 2->3 // 记录2的位置
 	if cur == nil {
@@ -24,34 +24,41 @@ func reverseListRecursion(pre, cur *ListNode) *ListNode {
 	next := cur.Next
 	cur.Next = pre
 
-	return reverseListRecursion(cur, next)
+	return reverseListRecursion2(cur, next)
 }
 
-func reverseListRecursion2(cur *ListNode) *ListNode {
-	if cur == nil {
-		return nil
+// 递归方式
+func reverseListRecursion(head *ListNode) *ListNode {
+	if head == nil || head.Next == nil {
+		return head
 	}
-	if cur.Next == nil {
-		return cur
-	}
-	//反转第二个节点往后的节点 1,2,3,4,5
-	last := reverseListRecursion2(cur.Next)
+	// 1->2->3
+	// head->next
+	// 1<->2 3 // 改变2.Next指向前，3的位置已经记录
+	// <-1->2 3
+	next := reverseListRecursion(head.Next)
 
-	cur.Next.Next = cur
-	cur.Next = nil //此时的cur节点为尾节点，next需要指向nil
-	return last
+	head.Next.Next = head
+	head.Next = nil
+	return next
 }
 
 //迭代方式
 func reverseListTraverse(head *ListNode) *ListNode {
-	if head == nil {
-		return nil
+	if head == nil || head.Next == nil {
+		return head
 	}
+	// 1->2->3
+	// nil cur->...
+	// nil<-cur next->... //改变cur.Next时需要先记录next值，不然无法找到下一个节点
+	// nil<-pre cur->...
 	cur := head
-	var pre, next *ListNode //保存前一个节点和后一个节点
+	var pre *ListNode //记录cur的上一个节点
 	for cur != nil {
-		next = cur.Next
+		next := cur.Next //记录cur的下一个节点
+
 		cur.Next = pre
+
 		pre = cur
 		cur = next
 	}

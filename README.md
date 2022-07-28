@@ -165,3 +165,16 @@ LeetCode题目的解法
 |面试题 02.07. 链表相交|[view](https://leetcode.cn/problems/intersection-of-two-linked-lists-lcci/)|
 |142. 环形链表 II|[view](https://leetcode.cn/problems/linked-list-cycle-ii/)|
 
+
+### 数组问题
+| title | link                                                                          |
+|------|-------------------------------------------------------------------------------|
+|704. 二分查找|[view](https://leetcode.cn/problems/binary-search/)|
+|27. 移除元素|[view](https://leetcode.cn/problems/remove-element/)|
+|977. 有序数组的平方|[view](https://leetcode.cn/problems/squares-of-a-sorted-array/)|
+|209. 长度最小的子数组|[view](https://leetcode.cn/problems/minimum-size-subarray-sum/)|
+|59. 螺旋矩阵 II|[view](https://leetcode.cn/problems/spiral-matrix-ii/)|
+|35. 搜索插入位置|[view](https://leetcode.cn/problems/search-insert-position/)|
+|34. 在排序数组中查找元素的第一个和最后一个位置|[view](https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/)|
+
+

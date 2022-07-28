@@ -6,89 +6,91 @@ type MyLinkedList struct {
 }
 
 func Constructor() MyLinkedList {
-	return MyLinkedList{} //返回一个虚拟头节点, Val=0, Next=nil
+	return MyLinkedList{}
 }
 
 func (this *MyLinkedList) Get(index int) int {
-	if index < 0 { //不在0-index中
+	// this->1-> 2-> 3
+	//获取链表中第 index 个节点的值
+	if index < 0 {
 		return -1
 	}
-	// this->0->1->2
 	cur := this.Next
 	for cur != nil && index != 0 {
 		cur = cur.Next
 		index--
 	}
-	if cur == nil { //超出了已存在的元素个数
+	if cur == nil {
 		return -1
 	}
 	return cur.Val
 }
 
 func (this *MyLinkedList) AddAtHead(val int) {
-	// this->0->1->2
-	node := MyLinkedList{Val: val}
-	node.Next = this.Next //没有元素则指向nil
-	this.Next = &node
+	// 在链表的第一个元素之前添加一个值为 val 的节点
+	// this->1-> 2-> 3
+	node := &MyLinkedList{Val: val}
+	node.Next = this.Next
+	this.Next = node
 }
 
 func (this *MyLinkedList) AddAtTail(val int) {
-	// this->0->1->2
-	tail := MyLinkedList{Val: val}
+	//将值为 val 的节点追加到链表的最后一个元素
+	// this->1-> 2-> 3
 	cur := this
-	for cur.Next != nil { //找到最后一个元素
+	for cur.Next != nil {
 		cur = cur.Next
 	}
-	cur.Next = &tail
+	cur.Next = &MyLinkedList{Val: val}
 }
 
 func (this *MyLinkedList) AddAtIndex(index int, val int) {
-
-	//如果index小于0，则在头部插入节点。
-	if index < 0 {
-		this.AddAtHead(val)
-		return
-	}
-	length := 0
+	// this->1-> 2-> 3
+	listLen := 0
 	cur := this.Next
 	for cur != nil {
-		length++
+		listLen++
 		cur = cur.Next
 	}
-	//如果 index 等于链表的长度，则该节点将附加到链表的末尾
-	if index == length {
+	// 如果 index 等于链表的长度，则该节点将附加到链表的末尾
+	if index == listLen {
 		this.AddAtTail(val)
 		return
 	}
-	//如果 index 大于链表长度，则不会插入节点。
-	if index > length {
+	//如果 index 大于链表长度，则不会插入节点
+	if index > listLen {
 		return
+	}
+	//如果index小于0，则在头部插入节点。
+	if index < 0 {
+		this.AddAtHead(val)
 	}
 	//在链表中的第 index 个节点之前添加值为 val  的节点
 	cur = this
-	// this->0->1->2
-	for index != 0 {
-		cur = cur.Next
+	for cur.Next != nil && index != 0 {
 		index--
+		cur = cur.Next
 	}
-	node := MyLinkedList{Val: val}
+	node := &MyLinkedList{Val: val}
 	node.Next = cur.Next
-	cur.Next = &node
+	cur.Next = node
 }
 
 func (this *MyLinkedList) DeleteAtIndex(index int) {
+	// 如果索引 index 有效，则删除链表中的第 index 个节点。
+	// this->1-> 2-> 3
 	if index < 0 {
 		return
 	}
-	// this->0->1->2
 	cur := this
 	for cur.Next != nil && index != 0 {
 		index--
 		cur = cur.Next
 	}
-	if cur.Next == nil {
+	if cur.Next == nil { //index超过了链表长度
 		return
 	}
+	//删除最后一个节点 cur->delNode
 	cur.Next = cur.Next.Next
 }
 
