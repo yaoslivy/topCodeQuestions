@@ -177,4 +177,40 @@ LeetCode题目的解法
 |35. 搜索插入位置|[view](https://leetcode.cn/problems/search-insert-position/)|
 |34. 在排序数组中查找元素的第一个和最后一个位置|[view](https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/)|
 
+### 哈希表问题
+| title | link                                                                          |
+|------|-------------------------------------------------------------------------------|
+|242. 有效的字母异位词|[view](https://leetcode.cn/problems/valid-anagram/)|
+|349. 两个数组的交集|[view](https://leetcode.cn/problems/intersection-of-two-arrays/)|
+|202. 快乐数|[view](https://leetcode.cn/problems/happy-number/)|
+|1. 两数之和|[view](https://leetcode.cn/problems/two-sum/)|
+|454. 四数相加 II|[view](https://leetcode.cn/problems/4sum-ii/)|
+|383. 赎金信|[view](https://leetcode.cn/problems/ransom-note/)|
+|15. 三数之和|[view](https://leetcode.cn/problems/3sum/)|
+|18. 四数之和|[view](https://leetcode.cn/problems/4sum/)|
+
+
+
+
+### 双指针问题
+| title | link                                                                          |
+|------|-------------------------------------------------------------------------------|
+|27. 移除元素|[view](https://leetcode.cn/problems/remove-element/)|
+|344. 反转字符串|[view](https://leetcode.cn/problems/reverse-string/submissions/)|
+|541. 反转字符串 II|[view](https://leetcode.cn/problems/reverse-string-ii/)|
+|剑指 Offer 05. 替换空格|[view](https://leetcode.cn/problems/ti-huan-kong-ge-lcof/)|
+|151. 颠倒字符串中的单词|[view](https://leetcode.cn/problems/reverse-words-in-a-string/)|
+|206.反转链表|[view](https://leetcode.cn/problems/reverse-linked-list/)|
+|19. 删除链表的倒数第 N 个结点|[view](https://leetcode.cn/problems/remove-nth-node-from-end-of-list/)|
+|面试题 02.07. 链表相交|[view](https://leetcode.cn/problems/intersection-of-two-linked-lists-lcci/)|
+|142. 环形链表 II|[view](https://leetcode.cn/problems/linked-list-cycle-ii/)|
+|15. 三数之和|[view](https://leetcode.cn/problems/3sum/)|
+|18. 四数之和|[view](https://leetcode.cn/problems/4sum/)|
+
+
+### 字符串问题
+| title | link                                                                          |
+|------|-------------------------------------------------------------------------------|
+
+
 

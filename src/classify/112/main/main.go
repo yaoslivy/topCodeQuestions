@@ -36,6 +36,20 @@ func hasPathSumRecursion(root *TreeNode, targetSum int, curSum int) {
 	hasPathSumRecursion(root.Right, targetSum, curSum+root.Val)
 }
 
+//递归方式 回溯
+func hasPathSumRecursion2(root *TreeNode, targetSum int) bool {
+	if root != nil && targetSum-root.Val == 0 && root.Left == nil && root.Right == nil { //如果目标值可以被减到0
+		return true
+	}
+	var left, right bool
+	if root != nil {
+		left = hasPathSumRecursion2(root.Left, targetSum-root.Val)
+		right = hasPathSumRecursion2(root.Right, targetSum-root.Val)
+	}
+
+	return left || right
+}
+
 //递归求解
 func hasPathSumTraverse(root *TreeNode, countSum int) bool {
 	//到叶子节点，且countSum为0，说明找到路径，否则返回false，回溯找下一跳路径

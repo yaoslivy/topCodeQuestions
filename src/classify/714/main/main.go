@@ -2,8 +2,6 @@ package main
 
 func maxProfit(prices []int, fee int) int {
 	//状态：持有股票时的金额，卖出股票时的金额
-	// dp[i][2] 0至i期间持有股票所得的金额，卖出股票所得的金额
-	// dp[i][0] = max(dp[i-1][0], dp[i-1][1]-prices[i]) //前一天就已经买入； 前一天卖出，今天买入
 	// dp[i][1] = max(dp[i-1][1], dp[i-1][0]+prices[i]-fee) //前一天卖出状态；前一天买入状态，今天卖出
 	// dp[0][0] = -prices[0] dp[0][1] = 0
 	if len(prices) == 0 {

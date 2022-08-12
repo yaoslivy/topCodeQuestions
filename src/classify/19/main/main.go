@@ -6,21 +6,40 @@ type ListNode struct {
 }
 
 func removeNthFromEnd(head *ListNode, n int) *ListNode {
-	//设置两个指针，隔n个节点，如此，下一节点就是需要删除的节点
+	// 设置快慢指针，使得两指针间隔n个节点，当快指针走到nil时，慢指针的下一个节点就是需要删除的节点
+	if head == nil {
+		return nil
+	}
+	//n范围不合法
+	if n <= 0 || n > getLength(head) {
+		return head
+	}
 	dummyHead := &ListNode{}
 	dummyHead.Next = head
-	fast := dummyHead
-	fast = fast.Next
-	for fast != nil && n != 0 {
+	var fast, slow *ListNode
+	fast = dummyHead.Next
+	for n != 0 && fast != nil {
 		fast = fast.Next
 		n--
 	}
-	// 1->2->3    // n = 2时， fast指向3，slow.Next是1，当fast为nil时,slow指向1，删除后一个节点
-	slow := dummyHead //slow和fast间隔n个节点
+	slow = dummyHead
 	for fast != nil {
 		fast = fast.Next
 		slow = slow.Next
 	}
 	slow.Next = slow.Next.Next
+
 	return dummyHead.Next
+}
+
+func getLength(head *ListNode) int {
+	if head == nil {
+		return 0
+	}
+	res := 1
+	for head != nil {
+		head = head.Next
+		res++
+	}
+	return res
 }

@@ -1,27 +1,12 @@
 package main
 
-import (
-	"bufio"
-	"fmt"
-	"os"
-	"strconv"
-	"strings"
-)
+import "fmt"
 
 func main() {
-	var a int
-	fmt.Scanln(&a)
-	fmt.Println("this is a=", a)
-	sc := bufio.NewScanner(os.Stdin)
-	sc.Scan()
-	curline := strings.Split(sc.Text(), " ")
-	arr := make([]int, a)
-	fmt.Println(curline)
-	for i := 0; i < a; i++ {
-		num, _ := strconv.Atoi(curline[i])
-		arr[i] = num
-	}
-	fmt.Println(arr)
+	dp := make([][4]int, 10)
+	fmt.Printf("%T", dp[0])
+	arr := [2]int{1, 2}
+	fmt.Printf("%T", arr)
 }
 
 func mergeSort(arr []int, left, right int) {
