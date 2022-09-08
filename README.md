@@ -3,7 +3,6 @@ LeetCode题目的解法
 ## 频率排序
 | title | link                                                      |
 |------|-----------------------------------------------------------|
-| 206. 反转链表 | [view](https://leetcode.cn/problems/reverse-linked-list/) |
 | 3. 无重复字符的最长子串 | [view](https://leetcode.cn/problems/longest-substring-without-repeating-characters/) |
 | 146. LRU 缓存 | [view](https://leetcode.cn/problems/lru-cache/) |
 | 215. 数组中的第K个最大元素 | [view](https://leetcode.cn/problems/kth-largest-element-in-an-array/) |
@@ -89,6 +88,8 @@ LeetCode题目的解法
 | 72. 编辑距离| [view](https://leetcode.cn/problems/edit-distance/) |
 | 647. 回文子串| [view](https://leetcode.cn/problems/palindromic-substrings/) |
 | 516. 最长回文子序列| [view](https://leetcode.cn/problems/longest-palindromic-subsequence/) |
+|42. 接雨水|[view](https://leetcode.cn/problems/trapping-rain-water/)|
+|84. 柱状图中最大的矩形|[view](https://leetcode.cn/problems/largest-rectangle-in-histogram/)|
 
 ### 贪心问题
 | title | link                                                                          |
@@ -188,6 +189,8 @@ LeetCode题目的解法
 |383. 赎金信|[view](https://leetcode.cn/problems/ransom-note/)|
 |15. 三数之和|[view](https://leetcode.cn/problems/3sum/)|
 |18. 四数之和|[view](https://leetcode.cn/problems/4sum/)|
+|3. 无重复字符的最长子串|[view](https://leetcode.cn/problems/longest-substring-without-repeating-characters/)|
+
 
 
 
@@ -206,11 +209,43 @@ LeetCode题目的解法
 |142. 环形链表 II|[view](https://leetcode.cn/problems/linked-list-cycle-ii/)|
 |15. 三数之和|[view](https://leetcode.cn/problems/3sum/)|
 |18. 四数之和|[view](https://leetcode.cn/problems/4sum/)|
+|42. 接雨水|[view](https://leetcode.cn/problems/trapping-rain-water/)|
+|84. 柱状图中最大的矩形|[view](https://leetcode.cn/problems/largest-rectangle-in-histogram/)|
 
 
 ### 字符串问题
 | title | link                                                                          |
 |------|-------------------------------------------------------------------------------|
+|344. 反转字符串|[view](https://leetcode.cn/problems/reverse-string/)|
+|541. 反转字符串II|[view](https://leetcode.cn/problems/reverse-string-ii/)|
+|剑指 Offer 05. 替换空格|[view](https://leetcode.cn/problems/ti-huan-kong-ge-lcof/)|
+|151. 颠倒字符串中的单词|[view](https://leetcode.cn/problems/reverse-words-in-a-string/)|
+|剑指Offer58-II.左旋转字符串|[view](https://leetcode.cn/problems/zuo-xuan-zhuan-zi-fu-chuan-lcof/)|
+|28. 实现 strStr()|[view](https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string/)|
+|459. 重复的子字符串|[view](https://leetcode.cn/problems/repeated-substring-pattern/)|
+|3. 无重复字符的最长子串|[view](https://leetcode.cn/problems/longest-substring-without-repeating-characters/)|
+
+
+### 栈和队列问题
+| title | link                                                                          |
+|------|-------------------------------------------------------------------------------|
+|232. 用栈实现队列|[view](https://leetcode.cn/problems/implement-queue-using-stacks/)|
+|225. 用队列实现栈|[view](https://leetcode.cn/problems/implement-stack-using-queues/)|
+|20. 有效的括号|[view](https://leetcode.cn/problems/valid-parentheses/)|
+|1047. 删除字符串中的所有相邻重复项|[view](https://leetcode.cn/problems/remove-all-adjacent-duplicates-in-string/)|
+|150. 逆波兰表达式求值|[view](https://leetcode.cn/problems/evaluate-reverse-polish-notation/)|
+|239. 滑动窗口最大值|[view](https://leetcode.cn/problems/sliding-window-maximum/)|
+|347. 前 K 个高频元素|[view](https://leetcode.cn/problems/top-k-frequent-elements/)|
+
+
+### 单调栈问题
+| title | link                                                                          |
+|------|-------------------------------------------------------------------------------|
+|739. 每日温度|[view](https://leetcode.cn/problems/daily-temperatures/)|
+|496. 下一个更大元素 I|[view](https://leetcode.cn/problems/next-greater-element-i/)|
+|503. 下一个更大元素 II|[view](https://leetcode.cn/problems/next-greater-element-ii/)|
+|42. 接雨水|[view](https://leetcode.cn/problems/trapping-rain-water/)|
+|84. 柱状图中最大的矩形|[view](https://leetcode.cn/problems/largest-rectangle-in-histogram/)|
 
 
 

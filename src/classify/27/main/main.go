@@ -1,22 +1,28 @@
 package main
 
 func removeElement(nums []int, val int) int {
-	i, j := 0, len(nums)-1
-	resLen := 0
-	//将前面等于val的都交换到后面去
-	for i <= j { //包含一个元素情况
-		if nums[i] == val {
-			for i < j && nums[j] == val { //从后往前找到一个位置元素不为val
-				j--
-			}
-			nums[i], nums[j] = nums[j], nums[i]
-			if i != j { //不是相同的位置交换才将不为val个数++
-				resLen++
-			}
-		} else { //不为val个数++
-			resLen++
-		}
-		i++
+	//使用双指针，left指针处数值等于val，则和后面不为val的元素互换位置
+	if len(nums) == 0 {
+		return 0
 	}
-	return resLen
+	left, right := 0, len(nums)-1
+	res := 0
+	for left <= right {
+		if nums[left] == val {
+			//从后往前找到一个不为val的值
+			for left <= right && nums[right] == val {
+				right--
+			}
+			//没有不为val的的值了
+			if left > right {
+				break
+			}
+			//交换
+			nums[left], nums[right] = nums[right], nums[left]
+		} else {
+			res++
+			left++
+		}
+	}
+	return res
 }

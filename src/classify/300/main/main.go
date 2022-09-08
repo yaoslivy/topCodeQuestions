@@ -5,7 +5,7 @@ func lengthOfLIS(nums []int) int {
 	//dp[i] = max(dp[i], dp[j]+1) //位置i的最长上升子序列等于j从0到i-1各个位置的最长上升子序列+1的最大值
 	//dp[i] = 1
 	dp := make([]int, len(nums))
-	for i, _ := range dp {
+	for i := 0; i < len(nums); i++ {
 		dp[i] = 1
 	}
 	res := 1

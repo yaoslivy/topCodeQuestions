@@ -5,7 +5,7 @@ func longestPalindromeSubseq(s string) int {
 	// dp[i][j] = dp[i+1][j-1]+2 if s[i] == s[j] else max(dp[i+1][j], dp[i][j-1]) // 不相等则观察加入哪一个的长度更大
 	// dp[i][i] = 1
 	dp := make([][]int, len(s))
-	for i, _ := range dp {
+	for i := 0; i < len(s); i++ {
 		dp[i] = make([]int, len(s))
 	}
 	for i := 0; i < len(s); i++ {

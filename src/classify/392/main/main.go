@@ -46,3 +46,27 @@ func isSubsequence2(s string, t string) bool {
 	}
 	return dp[len(s)][len(t)]
 }
+
+// 暴力匹配
+func isSubsequenceTraverse(s, t string) bool {
+	if len(s) == 0 {
+		return true
+	}
+	//所有可能的起点
+	for i := 0; i < len(t); i++ {
+		start := i
+		j := 0
+		for j < len(s) && start < len(t) {
+			if t[start] == s[j] {
+				j++
+				start++
+			} else {
+				start++
+			}
+		}
+		if j == len(s) {
+			return true
+		}
+	}
+	return false
+}

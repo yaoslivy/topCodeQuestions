@@ -6,7 +6,7 @@ func numDistinct(s string, t string) int {
 	// else  = dp[i-1][j]
 	// dp[0][0] = 1 dp[i][0] = 1 dp[0][j] = 0
 	dp := make([][]int, len(s)+1)
-	for i, _ := range dp {
+	for i := 0; i < len(s)+1; i++ {
 		dp[i] = make([]int, len(t)+1)
 	}
 	for i := 0; i <= len(s); i++ {

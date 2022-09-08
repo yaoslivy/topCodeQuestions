@@ -26,21 +26,24 @@ func fourSum(nums []int, target int) [][]int {
 			}
 			c, d := b+1, len(nums)-1
 			for c < d {
-				if nums[a]+nums[b]+nums[c]+nums[d] > target {
-					d--
-				} else if nums[a]+nums[b]+nums[c]+nums[d] < target {
+				// 对c去重
+				if c > b+1 && nums[c] == nums[c-1] {
 					c++
-				} else {
+					continue
+				}
+				// 对d去重
+				if d < len(nums)-1 && nums[d] == nums[d+1] {
+					d--
+					continue
+				}
+				if nums[a]+nums[b]+nums[c]+nums[d] == target {
 					res = append(res, []int{nums[a], nums[b], nums[c], nums[d]})
 					c++
 					d--
-					// 对c，d去重
-					for c < d && nums[c] == nums[c-1] {
-						c++
-					}
-					for c < d && nums[d] == nums[d+1] {
-						d--
-					}
+				} else if nums[a]+nums[b]+nums[c]+nums[d] > target {
+					d--
+				} else {
+					c++
 				}
 			}
 		}
