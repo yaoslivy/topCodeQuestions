@@ -16,7 +16,7 @@ func largestRectangleAreaDynamic(heights []int) int {
 	for i := 1; i < len(heights); i++ {
 		left := i - 1
 		for left >= 0 && heights[i] <= heights[left] {
-			left = minLeftIndex[left]
+			left = minLeftIndex[left] //直接到更小值的位置
 		}
 		minLeftIndex[i] = left
 	}
@@ -25,7 +25,7 @@ func largestRectangleAreaDynamic(heights []int) int {
 	for i := len(heights) - 2; i >= 0; i-- {
 		right := i + 1
 		for right < len(heights) && heights[i] <= heights[right] {
-			right = minRightIndex[right]
+			right = minRightIndex[right] //直接到更小值的位置
 		}
 		minRightIndex[i] = right
 	}

@@ -6,7 +6,7 @@ func longestCommonSubsequence(text1 string, text2 string) int {
 	// else  = max(dp[i-1][j], dp[i][j-1]) //去掉i-1位置字符和去掉j-1位置字符
 	// dp[i][0] = 0 dp[0][j] = 0
 	dp := make([][]int, len(text1)+1)
-	for i, _ := range dp {
+	for i := 0; i < len(dp); i++ {
 		dp[i] = make([]int, len(text2)+1)
 	}
 	for i := 1; i <= len(text1); i++ {
