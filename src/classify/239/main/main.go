@@ -1,6 +1,43 @@
 package main
 
 func maxSlidingWindow(nums []int, k int) []int {
+	//使用单调队列保存访问过的元素下标，队头到队尾对应元素值从大到小
+	//当当前元素值大于队尾元素时，一直将队尾元素出队，直到小于等于再入队
+	if len(nums) == 0 {
+		return []int{}
+	}
+	Q := make([]int, 0)
+	res := make([]int, 0)
+	//先处理前k个元素
+	for i := 0; i < k; i++ {
+		//当前元素>队尾元素，出队
+		for len(Q) != 0 && nums[i] > nums[Q[len(Q)-1]] {
+			Q = Q[:len(Q)-1]
+		}
+		//队列为空或当前元素值<=队尾元素值
+		Q = append(Q, i)
+	}
+	//第一个窗口最大值
+	res = append(res, nums[Q[0]])
+	//处理剩余元素
+	for i := k; i < len(nums); i++ {
+		//窗口向右滑动了一个位置，判断队头元素是否需要出队
+		if Q[0] == i-k {
+			Q = Q[1:]
+		}
+		//当前元素>队尾元素，出队
+		for len(Q) != 0 && nums[i] > nums[Q[len(Q)-1]] {
+			Q = Q[:len(Q)-1]
+		}
+		//队列为空或当前元素值<=队尾元素值
+		Q = append(Q, i)
+		//记录当前窗口最大值
+		res = append(res, nums[Q[0]])
+	}
+	return res
+}
+
+func maxSlidingWindow2(nums []int, k int) []int {
 	if len(nums) == 0 {
 		return []int{}
 	}

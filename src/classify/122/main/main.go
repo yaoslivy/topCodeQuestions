@@ -7,7 +7,7 @@ func maxProfit(prices []int) int {
 	// dp[i][1] = max(dp[i-1][1], dp[i-1][0]+prices[i]) // 今天卖出时，前一天必须持有股票
 	// dp[0][0] = -prices[0], dp[0][1] = 0
 	dp := make([][]int, len(prices))
-	for i, _ := range dp {
+	for i := 0; i < len(prices); i++ {
 		dp[i] = make([]int, 2)
 	}
 	dp[0][0] = -prices[0]

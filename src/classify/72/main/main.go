@@ -6,7 +6,7 @@ func minDistance(word1 string, word2 string) int {
 	// = min(dp[i-1][j]+1, dp[i][j-1]+1, dp[i-1][j-1]+1) //word1删除一个元素，word2删除一个元素， word1替换一个元素，
 	// dp[i][0] = i dp[0][j] = j dp[0][0] = 0
 	dp := make([][]int, len(word1)+1)
-	for i, _ := range dp {
+	for i := 0; i < len(word1)+1; i++ {
 		dp[i] = make([]int, len(word2)+1)
 	}
 	for i := 1; i < len(word1)+1; i++ {

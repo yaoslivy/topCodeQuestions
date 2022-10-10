@@ -248,4 +248,20 @@ LeetCode题目的解法
 |84. 柱状图中最大的矩形|[view](https://leetcode.cn/problems/largest-rectangle-in-histogram/)|
 
 
+### 位运算问题
+| title | link                                                                          |
+|------|-------------------------------------------------------------------------------|
+|1356. 根据数字二进制下 1 的数目排序|[view](https://leetcode.cn/problems/sort-integers-by-the-number-of-1-bits/)|
+
+
+
+### 图论问题
+| title | link                                                                          |
+|------|-------------------------------------------------------------------------------|
+|841. 钥匙和房间|[view](https://leetcode.cn/problems/keys-and-rooms/)|
+|127. 单词接龙|[view](https://leetcode.cn/problems/word-ladder/)|
+|684. 冗余连接|[view](https://leetcode.cn/problems/redundant-connection/)|
+|685. 冗余连接 II|[view](https://leetcode.cn/problems/redundant-connection-ii/)|
+
+
 
