@@ -1,5 +1,22 @@
 package main
 
+func reverseStr2(s string, k int) string {
+	if k <= 0 {
+		return s
+	}
+	sArr := []byte(s)
+	//需要反转的右边界
+	//ab cd efg
+	for i := k - 1; i < len(s)+k; i += 2 * k {
+		if i < len(s) {
+			reverse(sArr, i-k+1, i)
+		} else {
+			reverse(sArr, i-k+1, len(s)-1)
+		}
+	}
+	return string(sArr)
+}
+
 func reverseStr(s string, k int) string {
 	if len(s) == 0 {
 		return s

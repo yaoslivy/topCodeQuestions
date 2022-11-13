@@ -70,6 +70,9 @@ func getRemoveEdge(edges [][]int) []int {
 }
 
 func findRedundantDirectedConnection(edges [][]int) []int {
+	//要删除的边的可能出现情况:
+	// 1 当一个节点有两个入度时，要删除的边一定存在两条入度边的一条
+	// 2 当形成环时，删除最后一条形成环的边即可
 	//先统计各个节点的入度
 	inDegree := make([]int, len(father))
 	for i := 0; i < len(edges); i++ {
@@ -84,6 +87,7 @@ func findRedundantDirectedConnection(edges [][]int) []int {
 	}
 	// 如果有入度为2的节点，一定是在两条边里面删除一个，看删除哪个可以构成树
 	if len(twoDegree) > 0 {
+		//观察删除哪条边可以构成树 优先删除后一条
 		if isTreeAfterRemoveEdge(edges, twoDegree[0]) {
 			return edges[twoDegree[0]]
 		}

@@ -39,22 +39,21 @@ func getNext(s string) []int {
 	return next
 }
 
-//暴力求解
+//暴力求解：枚举所有可能的终点
 func repeatedSubstringPatternTraverse(s string) bool {
 	sLen := len(s)
 	if sLen <= 1 {
 		return false
 	}
-	//由子串重复两次一样，确定所有可能的子串长度
-	// abab
-	for i := 1; i <= sLen/2; i++ {
+	//所有可能的终点，起点一定是第一个位置
+	for i := 0; i < sLen/2; i++ {
 		//主串长度需要被子串长度整除
-		if sLen%i != 0 {
+		if sLen%(i+1) != 0 {
 			continue
 		}
-		j := i
+		j := i + 1 //下一个重复子串的开始
 		for ; j < sLen; j++ {
-			if s[j] != s[j-i] { // 长度i，每次j-i
+			if s[j] != s[j-i-1] { //每次j位置和前i+1个位置比较是否相等
 				break
 			}
 		}

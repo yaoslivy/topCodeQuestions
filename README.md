@@ -264,4 +264,8 @@ LeetCode题目的解法
 |685. 冗余连接 II|[view](https://leetcode.cn/problems/redundant-connection-ii/)|
 
 
+### 模拟
+| title | link                                                                          |
+|------|-------------------------------------------------------------------------------|
+|31. 下一个排列|[view](https://leetcode.cn/problems/next-permutation/)|
 

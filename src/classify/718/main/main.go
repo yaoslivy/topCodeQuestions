@@ -21,7 +21,7 @@ func findLength2(nums1 []int, nums2 []int) int {
 	// dp[i][j] = dp[i-1][j-1]+1 if nums[i-1] == nums[j-1] else = 0
 	// dp[i][0] = dp[0][j] = 0
 	dp := make([][]int, len(nums1)+1)
-	for i, _ := range dp {
+	for i := 0; i < len(nums1)+1; i++ {
 		dp[i] = make([]int, len(nums2)+1)
 	}
 	res := 0

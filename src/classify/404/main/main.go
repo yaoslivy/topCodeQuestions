@@ -68,3 +68,21 @@ func sumOfLeftLeavesPreOrder(root *TreeNode) {
 	sumOfLeftLeavesPreOrder(root.Left)
 	sumOfLeftLeavesPreOrder(root.Right)
 }
+
+//递归记录上一个访问节点的方式
+var pre *TreeNode //记录上一个访问节点
+func sumOfLeftLeavesRecursion(root *TreeNode) {
+	if root == nil {
+		return
+	}
+	//到叶子节点
+	if root.Left == nil && root.Right == nil {
+		//判断是否时左叶子
+		if pre != nil && pre.Left == root {
+			res += root.Val
+		}
+	}
+	pre = root
+	sumOfLeftLeavesRecursion(root.Left)
+	sumOfLeftLeavesRecursion(root.Right)
+}
