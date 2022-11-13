@@ -22,3 +22,17 @@ func removeDuplicates(s string) string {
 	}
 	return S
 }
+
+func removeDuplicates2(s string) string {
+	if len(s) <= 1 {
+		return s
+	}
+	for i := 1; i < len(s); i++ {
+		if i-1 >= 0 && s[i-1] == s[i] {
+			//删除i-1位置和i位置字母
+			s = s[:i-1] + s[i+1:]
+			i = i - 2
+		}
+	}
+	return s
+}

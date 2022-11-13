@@ -14,7 +14,14 @@ func pathSum(root *TreeNode, targetSum int) [][]int {
 	// pathSumTraverse(root, targetSum-root.Val, []int{root.Val})
 	// return res
 
-	return pathSumTraversePostTraverse(root, targetSum)
+	// return pathSumTraversePostTraverse(root, targetSum)
+
+	if root == nil {
+		return nil
+	}
+	res = make([][]int, 0)
+	pathSumRecursion(root, targetSum, []int{})
+	return res
 }
 
 //后序遍历求解
@@ -81,4 +88,29 @@ func pathSumTraverse(root *TreeNode, countSum int, oneRes []int) {
 		pathSumTraverse(root.Right, countSum-root.Right.Val, oneRes)
 		oneRes = oneRes[:len(oneRes)-1]
 	}
+}
+
+//递归思路2
+func pathSumRecursion(root *TreeNode, targetSum int, oneRes []int) {
+	if root == nil {
+		return
+	}
+	oneRes = append(oneRes, root.Val)
+	//判断当前节点是否是叶子节点
+	if root.Left == nil && root.Right == nil {
+		sum := 0
+		for _, val := range oneRes {
+			sum += val
+		}
+		if sum == targetSum {
+			copyArr := make([]int, len(oneRes))
+			copy(copyArr, oneRes)
+			res = append(res, copyArr)
+		}
+		return
+	}
+	//向左子树和右子树找叶子节点
+	pathSumRecursion(root.Left, targetSum, oneRes)
+	pathSumRecursion(root.Right, targetSum, oneRes)
+	oneRes = oneRes[:len(oneRes)-1]
 }

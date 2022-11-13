@@ -37,6 +37,39 @@ func trapByDynamic(height []int) int {
 }
 
 //双指针思路
+func trapByDouble(height []int) int {
+	//统计每一个位置接的雨水，如果当前位置可以接雨水，则左右两边柱子高度有 > 当前柱子高度的情况则可以接雨水
+	maxLeft := make([]int, len(height))  //i位置柱子左边最大的柱子下标
+	maxRight := make([]int, len(height)) //i位置柱子右边最大的柱子下标
+	maxLeft[0] = 0
+	maxRight[len(height)-1] = len(height) - 1
+	for i := 1; i < len(height); i++ {
+		if height[i] > height[maxLeft[i-1]] {
+			maxLeft[i] = i
+		} else {
+			maxLeft[i] = maxLeft[i-1]
+		}
+	}
+	for i := len(height) - 2; i >= 0; i-- {
+		if height[i] > height[maxRight[i+1]] {
+			maxRight[i] = i
+		} else {
+			maxRight[i] = maxRight[i+1]
+		}
+	}
+	//首尾不可能接雨水
+	res := 0
+	for i := 1; i < len(height)-1; i++ {
+		h := min(height[maxRight[i]], height[maxLeft[i]]) - height[i]
+		if h <= 0 {
+			continue
+		}
+		res += h
+	}
+	return res
+}
+
+//双指针思路
 func trapDoublePointer(height []int) int {
 	//遍历所有下标，以下标为起点，向右找到右侧最高的柱子，向左找到左侧最高的柱子，根据高度差判断是否当前柱子可以收集雨水
 	if len(height) <= 2 {

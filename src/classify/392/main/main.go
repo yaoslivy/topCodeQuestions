@@ -5,7 +5,7 @@ func isSubsequence(s string, t string) bool {
 	// dp[i][j] = dp[i-1][j-1]+1 if s[i-1] == t[j-1] else dp[i][j-1] //不相同则在t中跳过，相当于比较t[j-2]之前的字符
 	// dp[i][0] = 0 dp[0][j] = 0
 	dp := make([][]int, len(s)+1)
-	for i, _ := range dp {
+	for i := 0; i < len(s)+1; i++ {
 		dp[i] = make([]int, len(t)+1)
 	}
 	for i := 1; i <= len(s); i++ {
@@ -29,7 +29,7 @@ func isSubsequence2(s string, t string) bool {
 	// else = dp[i][j-1]
 	// dp[0][0] = true dp[0][j] = true dp[i][0] = false
 	dp := make([][]bool, len(s)+1)
-	for i, _ := range dp {
+	for i := 0; i < len(s)+1; i++ {
 		dp[i] = make([]bool, len(t)+1)
 	}
 	for j := 0; j < len(t)+1; j++ {

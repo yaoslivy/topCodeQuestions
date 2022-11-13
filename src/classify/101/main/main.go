@@ -21,7 +21,7 @@ func isSymmetricTraverse(root *TreeNode) bool {
 	}
 	Q := make([]*TreeNode, 0)
 	cur := root
-	Q = append(Q, cur.Left) //一次入队两个，一次出对两个来比较
+	Q = append(Q, cur.Left) //一次入队两个，一次出队两个来比较
 	Q = append(Q, cur.Right)
 	for len(Q) != 0 {
 		size := len(Q)
