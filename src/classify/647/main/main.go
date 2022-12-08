@@ -5,7 +5,7 @@ func countSubstrings(s string) int {
 	// dp[i][j] = true if s[i] == s[j] && (j-i <= 1 || dp[i+1][j-1]) //两指针指向的字符相等且区间内是回文子串
 	// dp[][] = false
 	dp := make([][]bool, len(s))
-	for i, _ := range dp {
+	for i := 0; i < len(s); i++ {
 		dp[i] = make([]bool, len(s))
 	}
 	res := 0

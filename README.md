@@ -20,7 +20,6 @@ LeetCode题目的解法
 | 33. 搜索旋转排序数组 | [view](https://leetcode.cn/problems/search-in-rotated-sorted-array/) |
 | 88. 合并两个有序数组 | [view](https://leetcode.cn/problems/merge-sorted-array/) |
 | 236. 二叉树的最近公共祖先 | [view](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/) |
-| 5. 最长回文子串 | [view](https://leetcode.cn/problems/longest-palindromic-substring/) |
 | 200. 岛屿数量 | [view](https://leetcode.cn/problems/number-of-islands/) |
 | 160. 相交链表 | [view](https://leetcode.cn/problems/intersection-of-two-linked-lists/) |
 | 46. 全排列 | [view](https://leetcode.cn/problems/permutations/) |
@@ -45,6 +44,7 @@ LeetCode题目的解法
 | 47. 全排列 II | [view](https://leetcode.cn/problems/permutations-ii/) |
 | 51. N 皇后 | [view](https://leetcode.cn/problems/n-queens/) |
 | 37. 解数独 | [view](https://leetcode.cn/problems/sudoku-solver/) |
+| 52. N皇后 II | [view](https://leetcode.cn/problems/n-queens-ii/) |
 
 
 ### 动态规划问题：
@@ -90,6 +90,9 @@ LeetCode题目的解法
 | 516. 最长回文子序列| [view](https://leetcode.cn/problems/longest-palindromic-subsequence/) |
 |42. 接雨水|[view](https://leetcode.cn/problems/trapping-rain-water/)|
 |84. 柱状图中最大的矩形|[view](https://leetcode.cn/problems/largest-rectangle-in-histogram/)|
+| 5. 最长回文子串 | [view](https://leetcode.cn/problems/longest-palindromic-substring/) |
+| 132. 分割回文串 II | [view](https://leetcode.cn/problems/palindrome-partitioning-ii/) |
+| 673. 最长递增子序列的个数 | [view](https://leetcode.cn/problems/number-of-longest-increasing-subsequence/) |
 
 ### 贪心问题
 | title | link                                                                          |
@@ -112,6 +115,8 @@ LeetCode题目的解法
 | 738. 单调递增的数字 | [view](https://leetcode.cn/problems/monotone-increasing-digits/submissions/)                                   |
 | 714. 买卖股票的最佳时机含手续费 | [view](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/)                                   |
 | 968. 监控二叉树 | [view](https://leetcode.cn/problems/binary-tree-cameras/)                                   |
+| 649. Dota2 参议院 | [view](https://leetcode.cn/problems/dota2-senate/)                                   |
+| 1221. 分割平衡字符串 | [view](https://leetcode.cn/problems/split-a-string-in-balanced-strings/)                                   |
 
 ### 二叉树问题
 | title | link                                                                          |
@@ -165,6 +170,8 @@ LeetCode题目的解法
 |19. 删除链表的倒数第 N 个结点|[view](https://leetcode.cn/problems/remove-nth-node-from-end-of-list/)|
 |面试题 02.07. 链表相交|[view](https://leetcode.cn/problems/intersection-of-two-linked-lists-lcci/)|
 |142. 环形链表 II|[view](https://leetcode.cn/problems/linked-list-cycle-ii/)|
+|234. 回文链表|[view](https://leetcode.cn/problems/palindrome-linked-list/)|
+|143. 重排链表|[view](https://leetcode.cn/problems/reorder-list/)|
 
 
 ### 数组问题
@@ -177,6 +184,13 @@ LeetCode题目的解法
 |59. 螺旋矩阵 II|[view](https://leetcode.cn/problems/spiral-matrix-ii/)|
 |35. 搜索插入位置|[view](https://leetcode.cn/problems/search-insert-position/)|
 |34. 在排序数组中查找元素的第一个和最后一个位置|[view](https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/)|
+|1365. 有多少小于当前数字的数字 |[view](https://leetcode.cn/problems/how-many-numbers-are-smaller-than-the-current-number/)|
+|941. 有效的山脉数组 |[view](https://leetcode.cn/problems/valid-mountain-array/)|
+|1207. 独一无二的出现次数|[view](https://leetcode.cn/problems/unique-number-of-occurrences/)|
+|283. 移动零|[view](https://leetcode.cn/problems/move-zeroes/)|
+|189. 轮转数组|[view](https://leetcode.cn/problems/rotate-array/)|
+|724. 寻找数组的中心下标|[view](https://leetcode.cn/problems/find-pivot-index/)|
+|922. 按奇偶排序数组 II|[view](https://leetcode.cn/problems/sort-array-by-parity-ii/)|
 
 ### 哈希表问题
 | title | link                                                                          |
@@ -211,6 +225,7 @@ LeetCode题目的解法
 |18. 四数之和|[view](https://leetcode.cn/problems/4sum/)|
 |42. 接雨水|[view](https://leetcode.cn/problems/trapping-rain-water/)|
 |84. 柱状图中最大的矩形|[view](https://leetcode.cn/problems/largest-rectangle-in-histogram/)|
+|941. 有效的山脉数组 |[view](https://leetcode.cn/problems/valid-mountain-array/)|
 
 
 ### 字符串问题
@@ -236,6 +251,7 @@ LeetCode题目的解法
 |150. 逆波兰表达式求值|[view](https://leetcode.cn/problems/evaluate-reverse-polish-notation/)|
 |239. 滑动窗口最大值|[view](https://leetcode.cn/problems/sliding-window-maximum/)|
 |347. 前 K 个高频元素|[view](https://leetcode.cn/problems/top-k-frequent-elements/)|
+|143. 重排链表|[view](https://leetcode.cn/problems/reorder-list/)|
 
 
 ### 单调栈问题
@@ -268,4 +284,5 @@ LeetCode题目的解法
 | title | link                                                                          |
 |------|-------------------------------------------------------------------------------|
 |31. 下一个排列|[view](https://leetcode.cn/problems/next-permutation/)|
+|463. 岛屿的周长|[view](https://leetcode.cn/problems/island-perimeter/)|
 
