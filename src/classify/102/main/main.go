@@ -7,28 +7,30 @@ type TreeNode struct {
 }
 
 func levelOrder(root *TreeNode) [][]int {
+	// 使用队列记录每一层访问过的节点
 	if root == nil {
-		return nil
+		return [][]int{}
 	}
-	p := root
 	Q := make([]*TreeNode, 0)
-	Q = append(Q, p)
+	cur := root
+	Q = append(Q, cur)
 	res := make([][]int, 0)
 	for len(Q) != 0 {
-		size := len(Q) //每一层的数量
-		oneLevel := make([]int, 0)
-		for ; size > 0; size-- {
-			p = Q[0]
+		// 根据当前层的节点个数来添加下一层节点
+		size := len(Q)
+		oneRes := make([]int, 0)
+		for i := 0; i < size; i++ {
+			cur = Q[0]
 			Q = Q[1:]
-			oneLevel = append(oneLevel, p.Val)
-			if p.Left != nil {
-				Q = append(Q, p.Left)
+			oneRes = append(oneRes, cur.Val)
+			if cur.Left != nil {
+				Q = append(Q, cur.Left)
 			}
-			if p.Right != nil {
-				Q = append(Q, p.Right)
+			if cur.Right != nil {
+				Q = append(Q, cur.Right)
 			}
 		}
-		res = append(res, oneLevel)
+		res = append(res, oneRes)
 	}
 	return res
 }
