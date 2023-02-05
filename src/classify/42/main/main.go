@@ -36,6 +36,40 @@ func trapByDynamic(height []int) int {
 	return res
 }
 
+func trapByDoublePointer(height []int) int {
+	if len(height) <= 1 {
+		return 0
+	}
+	// 找到当前柱子左右两边最大高度即可计算当前柱子列方向上可以接水的面积
+	maxLeft := make([]int, len(height))
+	maxRight := make([]int, len(height))
+	maxLeft[0] = 0
+	maxRight[len(height)-1] = len(height) - 1
+	for i := 1; i < len(height); i++ {
+		index := i
+		if height[i] < height[maxLeft[i-1]] {
+			index = maxLeft[i-1]
+		}
+		maxLeft[i] = index // i位置左边最大柱子下标
+	}
+	for i := len(height) - 2; i >= 0; i-- {
+		index := i
+		if height[index] < height[maxRight[i+1]] {
+			index = maxRight[i+1]
+		}
+		maxRight[i] = index
+	}
+	// 按照列方向统计面积
+	res := 0
+	for i := 1; i < len(height)-1; i++ {
+		h := min(height[maxLeft[i]], height[maxRight[i]]) - height[i]
+		if h > 0 {
+			res += h * 1
+		}
+	}
+	return res
+}
+
 //双指针思路
 func trapByDouble(height []int) int {
 	//统计每一个位置接的雨水，如果当前位置可以接雨水，则左右两边柱子高度有 > 当前柱子高度的情况则可以接雨水
@@ -121,8 +155,9 @@ func trapByStack(height []int) int {
 			if len(S) == 0 {
 				break
 			}
+			//逐行计算凹槽面积
 			h := min(height[i], height[S[len(S)-1]]) - height[mid]
-			w := i - S[len(S)-1] - 1 //中间高度
+			w := i - S[len(S)-1] - 1 //中间宽度
 			res += h * w
 		}
 		//栈为空或当前元素小于栈顶元素则入栈

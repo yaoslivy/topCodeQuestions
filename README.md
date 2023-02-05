@@ -1,28 +1,5 @@
 # topCodeQuestions
 LeetCode题目的解法
-## 频率排序
-| title | link                                                      |
-|------|-----------------------------------------------------------|
-| 3. 无重复字符的最长子串 | [view](https://leetcode.cn/problems/longest-substring-without-repeating-characters/) |
-| 146. LRU 缓存 | [view](https://leetcode.cn/problems/lru-cache/) |
-| 215. 数组中的第K个最大元素 | [view](https://leetcode.cn/problems/kth-largest-element-in-an-array/) |
-| 25. K 个一组翻转链表 | [view](https://leetcode.cn/problems/reverse-nodes-in-k-group/) |
-| 15. 三数之和 | [view](https://leetcode.cn/problems/3sum/) |
-| 912. 排序数组 | [view](https://leetcode.cn/problems/sort-an-array/) |
-| 53. 最大子数组和 | [view](https://leetcode.cn/problems/maximum-subarray/) |
-| 21. 合并两个有序链表 | [view](https://leetcode.cn/problems/merge-two-sorted-lists/) |
-| 1. 两数之和 | [view](https://leetcode.cn/problems/two-sum/) |
-| 102. 二叉树的层序遍历 | [view](https://leetcode.cn/problems/binary-tree-level-order-traversal/) |
-| 121. 买卖股票的最佳时机 | [view](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock/) |
-| 20. 有效的括号 | [view](https://leetcode.cn/problems/valid-parentheses/) |
-| 141. 环形链表 | [view](https://leetcode.cn/problems/linked-list-cycle/) |
-| 103. 二叉树的锯齿形层序遍历 | [view](https://leetcode.cn/problems/binary-tree-zigzag-level-order-traversal/) |
-| 33. 搜索旋转排序数组 | [view](https://leetcode.cn/problems/search-in-rotated-sorted-array/) |
-| 88. 合并两个有序数组 | [view](https://leetcode.cn/problems/merge-sorted-array/) |
-| 236. 二叉树的最近公共祖先 | [view](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/) |
-| 200. 岛屿数量 | [view](https://leetcode.cn/problems/number-of-islands/) |
-| 160. 相交链表 | [view](https://leetcode.cn/problems/intersection-of-two-linked-lists/) |
-| 46. 全排列 | [view](https://leetcode.cn/problems/permutations/) |
 
 ## 分类：
 
@@ -45,6 +22,7 @@ LeetCode题目的解法
 | 51. N 皇后 | [view](https://leetcode.cn/problems/n-queens/) |
 | 37. 解数独 | [view](https://leetcode.cn/problems/sudoku-solver/) |
 | 52. N皇后 II | [view](https://leetcode.cn/problems/n-queens-ii/) |
+| 200. 岛屿数量 | [view](https://leetcode.cn/problems/number-of-islands/) |
 
 
 ### 动态规划问题：
@@ -62,7 +40,7 @@ LeetCode题目的解法
 | 1049. 最后一块石头的重量 II | [view](https://leetcode.cn/problems/last-stone-weight-ii/) |
 | 494. 目标和 | [view](https://leetcode.cn/problems/target-sum/) |
 | 474. 一和零 | [view](https://leetcode.cn/problems/ones-and-zeroes/) |
-| 518. 零钱兑换 II | [view](https://leetcode.cn/problems/coin-change-2/) |
+| 518. 零钱兑换 II | [view](https://leetcode.cn/problems/coin-change-ii/) |
 | 377. 组合总和 Ⅳ | [view](https://leetcode.cn/problems/combination-sum-iv/) |
 | 322. 零钱兑换 | [view](https://leetcode.cn/problems/coin-change/) |
 | 279. 完全平方数 | [view](https://leetcode.cn/problems/perfect-squares/) |
@@ -159,6 +137,10 @@ LeetCode题目的解法
 |450. 删除二叉搜索树中的节点|[view](https://leetcode.cn/problems/delete-node-in-a-bst/)|
 |669. 修剪二叉搜索树|[view](https://leetcode.cn/problems/trim-a-binary-search-tree/)|
 |108. 将有序数组转换为二叉搜索树|[view](https://leetcode.cn/problems/convert-sorted-array-to-binary-search-tree/)|
+|129. 求根节点到叶节点数字之和 |[view](https://leetcode.cn/problems/sum-root-to-leaf-numbers/)|
+|1382. 将二叉搜索树变平衡|[view](https://leetcode.cn/problems/balance-a-binary-search-tree/)|
+|100. 相同的树|[view](https://leetcode.cn/problems/same-tree/)|
+| 103. 二叉树的锯齿形层序遍历 | [view](https://leetcode.cn/problems/binary-tree-zigzag-level-order-traversal/) |
 
 ### 链表问题
 | title | link                                                                          |
@@ -172,7 +154,11 @@ LeetCode题目的解法
 |142. 环形链表 II|[view](https://leetcode.cn/problems/linked-list-cycle-ii/)|
 |234. 回文链表|[view](https://leetcode.cn/problems/palindrome-linked-list/)|
 |143. 重排链表|[view](https://leetcode.cn/problems/reorder-list/)|
-
+| 141. 环形链表 | [view](https://leetcode.cn/problems/linked-list-cycle/) |
+| 146. LRU 缓存 | [view](https://leetcode.cn/problems/lru-cache/) |
+| 25. K 个一组翻转链表 | [view](https://leetcode.cn/problems/reverse-nodes-in-k-group/) |
+| 21. 合并两个有序链表 | [view](https://leetcode.cn/problems/merge-two-sorted-lists/) |
+| 160. 相交链表 | [view](https://leetcode.cn/problems/intersection-of-two-linked-lists/) |
 
 ### 数组问题
 | title | link                                                                          |
@@ -191,6 +177,9 @@ LeetCode题目的解法
 |189. 轮转数组|[view](https://leetcode.cn/problems/rotate-array/)|
 |724. 寻找数组的中心下标|[view](https://leetcode.cn/problems/find-pivot-index/)|
 |922. 按奇偶排序数组 II|[view](https://leetcode.cn/problems/sort-array-by-parity-ii/)|
+| 215. 数组中的第K个最大元素 | [view](https://leetcode.cn/problems/kth-largest-element-in-an-array/) |
+| 33. 搜索旋转排序数组 | [view](https://leetcode.cn/problems/search-in-rotated-sorted-array/) |
+| 88. 合并两个有序数组 | [view](https://leetcode.cn/problems/merge-sorted-array/) |
 
 ### 哈希表问题
 | title | link                                                                          |
@@ -204,6 +193,9 @@ LeetCode题目的解法
 |15. 三数之和|[view](https://leetcode.cn/problems/3sum/)|
 |18. 四数之和|[view](https://leetcode.cn/problems/4sum/)|
 |3. 无重复字符的最长子串|[view](https://leetcode.cn/problems/longest-substring-without-repeating-characters/)|
+|205. 同构字符串|[view](https://leetcode.cn/problems/isomorphic-strings/)|
+|1002. 查找共用字符|[view](https://leetcode.cn/problems/find-common-characters/)|
+| 146. LRU 缓存 | [view](https://leetcode.cn/problems/lru-cache/) |
 
 
 
@@ -226,6 +218,9 @@ LeetCode题目的解法
 |42. 接雨水|[view](https://leetcode.cn/problems/trapping-rain-water/)|
 |84. 柱状图中最大的矩形|[view](https://leetcode.cn/problems/largest-rectangle-in-histogram/)|
 |941. 有效的山脉数组 |[view](https://leetcode.cn/problems/valid-mountain-array/)|
+|925. 长按键入|[view](https://leetcode.cn/problems/long-pressed-name/)|
+|844. 比较含退格的字符串|[view](https://leetcode.cn/problems/backspace-string-compare/)|
+| 215. 数组中的第K个最大元素 | [view](https://leetcode.cn/problems/kth-largest-element-in-an-array/) |
 
 
 ### 字符串问题
@@ -239,6 +234,8 @@ LeetCode题目的解法
 |28. 实现 strStr()|[view](https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string/)|
 |459. 重复的子字符串|[view](https://leetcode.cn/problems/repeated-substring-pattern/)|
 |3. 无重复字符的最长子串|[view](https://leetcode.cn/problems/longest-substring-without-repeating-characters/)|
+|925. 长按键入|[view](https://leetcode.cn/problems/long-pressed-name/)|
+|844. 比较含退格的字符串|[view](https://leetcode.cn/problems/backspace-string-compare/)|
 
 
 ### 栈和队列问题

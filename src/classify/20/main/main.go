@@ -37,3 +37,28 @@ func isValid2(s string) bool {
 	}
 	return true
 }
+
+func isValid(s string) bool {
+	// 使用一个栈记录遍历过的左字符串
+	S := make([]byte, 0)
+	for i := 0; i < len(s); i++ {
+		if s[i] == '(' || s[i] == '{' || s[i] == '[' {
+			S = append(S, s[i])
+		} else {
+			if s[i] == ')' && (len(S) == 0 || S[len(S)-1] != '(') {
+				return false
+			}
+			if s[i] == ']' && (len(S) == 0 || S[len(S)-1] != '[') {
+				return false
+			}
+			if s[i] == '}' && (len(S) == 0 || S[len(S)-1] != '{') {
+				return false
+			}
+			S = S[:len(S)-1]
+		}
+	}
+	if len(S) != 0 {
+		return false
+	}
+	return true
+}

@@ -8,6 +8,30 @@ type Node struct {
 }
 
 func connect(root *Node) *Node {
+	// return connectTraverse(root)
+	return connectRecursion(root)
+}
+
+// 递归
+func connectRecursion(root *Node) *Node {
+	if root == nil {
+		return nil
+	}
+	if root.Left != nil {
+		root.Left.Next = root.Right
+	}
+	if root.Right != nil {
+		if root.Next != nil {
+			root.Right.Next = root.Next.Left
+		}
+	}
+	connectRecursion(root.Left)
+	connectRecursion(root.Right)
+	return root
+}
+
+// 迭代
+func connectTraverse(root *Node) *Node {
 	if root == nil {
 		return root
 	}
